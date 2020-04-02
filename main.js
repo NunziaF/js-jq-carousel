@@ -1,28 +1,27 @@
- // creare uno slider
+// creare uno slider
 $(document).ready(function(){
-
 
 // gestione evento sul prev
   $('.prev').click(
     //funzione di CB
-      prevImg
+    prevImg
   );
 
 // gestione evento sul next
   $('.next').click(
     //funzione di CB
-      nextImg
+    nextImg
   );
 
 // gestione evento su nav
   $('.nav i').click(
-  //funzione di CB
+    //funzione di CB
     nav
   );
 
 
   // funzione next
-function nextImg() {
+  function nextImg() {
 
     // salvo ref a img attiva al momento del click
     var imgActive = $('.images img.active');
@@ -37,7 +36,7 @@ function nextImg() {
     ballActive.removeClass('active');
 
     // verifico se questa img era l'ultima
-    if(imgActive.hasClass('last')){
+    if (imgActive.hasClass('last')) {
       $('.images img.first').addClass('active');
       $('.nav i.first').addClass('active');
     } else {
@@ -45,65 +44,65 @@ function nextImg() {
       imgActive.next().addClass('active');
       ballActive.next().addClass('active');
       // console.log(imgActive.next());
+    };
   };
-};
 
-// funzione prevImg
- function prevImg() {
+  // funzione prevImg
+  function prevImg() {
 
-   // salvo ref a img attiva al momento del click
-   var imgActive = $('.images img.active');
+    // salvo ref a img attiva al momento del click
+    var imgActive = $('.images img.active');
 
-   // salvo il pallino attivo
-   var ballActive = $('.nav i.active');
+    // salvo il pallino attivo
+    var ballActive = $('.nav i.active');
 
-   // tolgo la classe active all'img selezionata
-   imgActive.removeClass('active');
-   // tolgo la classe active al pallino selezionato
-   ballActive.removeClass('active');
+    // tolgo la classe active all'img selezionata
+    imgActive.removeClass('active');
+    // tolgo la classe active al pallino selezionato
+    ballActive.removeClass('active');
 
-   // verifico se questa img era la prima
-   if(imgActive.hasClass('first')){
-     $('.images img.last').addClass('active');
-     $('.nav i.last').addClass('active');
-   } else {
-     // applica classe active alla prox img
-     imgActive.prev().addClass('active');
-     ballActive.prev().addClass('active');
-     // console.log(imgActive.next());
-   };
+    // verifico se questa img era la prima
+    if(imgActive.hasClass('first')){
+      $('.images img.last').addClass('active');
+      $('.nav i.last').addClass('active');
+    } else {
+      // applica classe active alla prox img
+      imgActive.prev().addClass('active');
+      ballActive.prev().addClass('active');
+    };
+  };
 
- };
+  // funzione nav
+  function nav() {
 
-// funzione nav
- function nav() {
-   // salvo ref a img attiva al momento del click
-   var imgActive = $('.images img.active');
-   // salvo il pallino attivo
-   var ballActive = $('.nav i.active');
-   // tolgo la classe active all'img
-   imgActive.removeClass('active');
-   // tolgo la classe active al pallino
-   ballActive.removeClass('active');
-   // aggiungo la classe active all'img selezionata
+    // salvo ref a img attiva al momento del click
+    var imgActive = $('.images img.active');
 
-   $(this).addClass('active');
+    // salvo il pallino attivo
+    var ballActive = $('.nav i.active');
+
+    // tolgo la classe active all'img
+    imgActive.removeClass('active');
+
+    // tolgo la classe active al pallino
+    ballActive.removeClass('active');
+
+    // aggiungo la classe active all'img selezionata
+    $(this).addClass('active');
 
 
-   //ad ogni pallino selezionato corrisponde un'immagine che si attiva
-     if (ballActive.hasClass('first')) {
-       $(('.images>img').eq(0)).addClass('active');
+    //ad ogni pallino selezionato corrisponde un'immagine che si attiva
+    if (ballActive.hasClass('first')) {
+      $(('.images>img').eq(0)).addClass('active');
 
-     } if else (ballActive.hasClass('last')) {
-       $(('.images>img').eq(3)).addClass('active');
+    } if else (ballActive.hasClass('last')) {
+      $(('.images>img').eq(3)).addClass('active');
 
-     } if else (ballActive.hasClass('second')) {
-       $(('.images>img').eq(1)).addClass('active');
+    } if else (ballActive.hasClass('second')) {
+      $(('.images>img').eq(1)).addClass('active');
 
-     } if else (ballActive.hasClass('third')){
-       $(('.images>img').eq(2)).addClass('active');
-
-     };
- };
-
+    } if else (ballActive.hasClass('third')){
+      $(('.images>img').eq(2)).addClass('active');
+    };
+  };
 });

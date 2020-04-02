@@ -5,9 +5,6 @@
   box-sizing: border-box;
 }
 
-
-
-
 /* regole generali blocco slider */
 .slider-wrapper{
   display: flex;
@@ -19,13 +16,9 @@
 
 /* regole del blocco imgs */
 
-
-
 .images {
   width: 80%;
-
 }
-
 
 .images img {
   width: 100%;
