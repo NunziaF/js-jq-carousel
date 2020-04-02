@@ -14,13 +14,18 @@ $(document).ready(function(){
       nextImg
   );
 
+// gestione evento su nav
+  $('.nav i').click(
+  //funzione di CB
+    nav
+  );
+
 
   // funzione next
 function nextImg() {
 
     // salvo ref a img attiva al momento del click
     var imgActive = $('.images img.active');
-    // console.log(imgActive);
 
     // salvo il pallino attivo
     var ballActive = $('.nav i.active');
@@ -31,8 +36,6 @@ function nextImg() {
     // tolgo la classe active al pallino selezionato
     ballActive.removeClass('active');
 
-
-
     // verifico se questa img era l'ultima
     if(imgActive.hasClass('last')){
       $('.images img.first').addClass('active');
@@ -42,8 +45,8 @@ function nextImg() {
       imgActive.next().addClass('active');
       ballActive.next().addClass('active');
       // console.log(imgActive.next());
-  }
-}
+  };
+};
 
 // funzione prevImg
  function prevImg() {
@@ -68,11 +71,39 @@ function nextImg() {
      imgActive.prev().addClass('active');
      ballActive.prev().addClass('active');
      // console.log(imgActive.next());
-   }
+   };
 
- }
+ };
+
+// funzione nav
+ function nav() {
+   // salvo ref a img attiva al momento del click
+   var imgActive = $('.images img.active');
+   // salvo il pallino attivo
+   var ballActive = $('.nav i.active');
+   // tolgo la classe active all'img
+   imgActive.removeClass('active');
+   // tolgo la classe active al pallino
+   ballActive.removeClass('active');
+   // aggiungo la classe active all'img selezionata
+
+   $(this).addClass('active');
 
 
+   //ad ogni pallino selezionato corrisponde un'immagine che si attiva
+     if (ballActive.hasClass('first')) {
+       $(('.images>img').eq(0)).addClass('active');
 
+     } if else (ballActive.hasClass('last')) {
+       $(('.images>img').eq(3)).addClass('active');
+
+     } if else (ballActive.hasClass('second')) {
+       $(('.images>img').eq(1)).addClass('active');
+
+     } if else (ballActive.hasClass('third')){
+       $(('.images>img').eq(2)).addClass('active');
+
+     };
+ };
 
 });
