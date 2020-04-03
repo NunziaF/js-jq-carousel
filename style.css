@@ -1,4 +1,5 @@
  /* regole generali */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +7,7 @@
 }
 
 /* regole generali blocco slider */
+
 .slider-wrapper{
   display: flex;
   align-items: center;
@@ -37,8 +39,8 @@
 
 .nav {
   position: absolute;
-  bottom: 20px;
-  left: 40%;
+  bottom: 30px;
+  left: 45%;
 }
 .nav i.active {
   color: red;

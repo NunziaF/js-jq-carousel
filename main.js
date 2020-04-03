@@ -87,22 +87,22 @@ $(document).ready(function(){
     // tolgo la classe active al pallino
     ballActive.removeClass('active');
 
-    // aggiungo la classe active all'img selezionata
+    // aggiungo la classe active al pallino selezionato
     $(this).addClass('active');
 
 
     //ad ogni pallino selezionato corrisponde un'immagine che si attiva
     if (ballActive.hasClass('first')) {
-      $(('.images>img').eq(0)).addClass('active');
+      $('.images > img').eq(0).addClass('active');
 
-    } if else (ballActive.hasClass('last')) {
-      $(('.images>img').eq(3)).addClass('active');
+    } else if (ballActive.hasClass('last')) {
+      $('.images > img').eq(3).addClass('active');
 
-    } if else (ballActive.hasClass('second')) {
-      $(('.images>img').eq(1)).addClass('active');
+    } else if (ballActive.hasClass('second')) {
+      $('.images > img').eq(1).addClass('active');
 
-    } if else (ballActive.hasClass('third')){
-      $(('.images>img').eq(2)).addClass('active');
-    };
+    } else {
+      $('.images > img').eq(2).addClass('active');
+    }
   };
 });
